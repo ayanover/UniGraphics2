@@ -27,6 +27,9 @@ public class PlayerCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked; // Ukryj kursor i zablokuj go w oknie
         Cursor.visible = false;
+
+        cameraPosition.position = playerBody.position + playerBody.forward * cameraOffset.z +
+                            playerBody.right * cameraOffset.x + Vector3.up * cameraOffset.y;
     }
 
     private void Update()
